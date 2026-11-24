@@ -1,0 +1,21 @@
+* { box-sizing: border-box; }
+body { margin: 0; height: 100vh; height: 100dvh; background: #080603; display: grid; place-items: center; overflow: hidden; font-family: Arial, Helvetica, sans-serif; }
+.poster { position: relative; width: min(100vw, 75vh); width: min(100vw, 75dvh); aspect-ratio: 1086 / 1448; container-type: inline-size; flex: none; }
+.artwork { width: 100%; height: 100%; object-fit: contain; display: block; }
+.claim {
+  position: absolute; left: 50%; bottom: 5%; width: 73%;
+  padding: 3% 2%; border: 3px solid #fff4ad; border-radius: 15px;
+  background: linear-gradient(180deg,#fffbc3 0%,#ffe35c 35%,#efaa00 62%,#fff38a 100%);
+  color: #681500; font-size: 6.1cqw; font-weight: 900;
+  letter-spacing: .02em; cursor: pointer; overflow: hidden;
+  box-shadow: 0 0 0 3px #dba500, 0 0 22px #ffbf00, inset 0 0 0 2px #fff;
+  transform: translateX(-50%); animation: bounce 1.8s ease-in-out infinite;
+  -webkit-tap-highlight-color: transparent;
+}
+.claim::after { content: ''; position: absolute; inset: 0; background: linear-gradient(110deg, transparent 30%, #ffffff99 50%, transparent 70%); transform: translateX(-120%); animation: shine 2.8s infinite; pointer-events: none; }
+.claim:hover { filter: brightness(1.12); }
+.claim:focus-visible { outline: 3px solid white; outline-offset: 7px; }
+@keyframes bounce { 0%,100% { transform: translate(-50%,0) scale(1); } 50% { transform: translate(-50%,-7px) scale(1.035); } }
+@keyframes shine { 0%,35% { transform: translateX(-120%); } 75%,100% { transform: translateX(120%); } }
+.notice { position: absolute; bottom: 0; width: 100%; margin: 0; padding: 5px; color: white; background: #171009; text-align: center; font-size: 12px; }
+@media (prefers-reduced-motion: reduce) { .claim,.claim::after { animation: none; } }
