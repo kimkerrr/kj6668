@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         fbq(
           "trackSingle",
-          "1833476494361737",
+          "1679141210528098",
           "Lead",
           {
             content_name: "Join & Claim",
