@@ -43,3 +43,20 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 });
+document.addEventListener('DOMContentLoaded', function () {
+
+  document.querySelectorAll('a, button').forEach(function (btn) {
+
+    btn.addEventListener('click', function () {
+
+      gtag('event', 'button_click', {
+        button_text: this.innerText.trim(),
+        button_url: this.href || '',
+        page_location: window.location.href
+      });
+
+    });
+
+  });
+
+});
